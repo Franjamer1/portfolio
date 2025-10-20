@@ -1,3 +1,14 @@
+:root {
+    --color-bg-dark: rgb(6, 41, 37);
+    /* Fondo principal */
+    --color-bg-medium: rgb(4, 74, 66);
+    /* Secciones */
+    --color-accent: rgb(58, 145, 136);
+    /* Detalles / botones */
+    --color-light: rgb(184, 225, 221);
+    /* Texto claro / bordes */
+}
+
 /* * {
     outline: 1px solid red;
 } */
@@ -5,36 +16,135 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: #111;
-    color: #eee;
+    background: var(--color-bg-dark);
+    color: var(--color-light);
 }
 
+/* Header */
 header {
-    text-align: center;
-    padding: 3rem 1rem;
-    background: #1a1a1a;
-}
-
-h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
-
-.projects {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 3rem 1rem;
+    background: var(--color-bg-medium);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+/* Contenedor del nombre + foto */
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
-    padding: 2rem;
-    max-width: 900px;
+}
+
+.header-top h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: var(--color-light);
+}
+
+.header-top p {
+    color: var(--color-accent);
+    font-weight: 500;
+    margin: 0.3rem 0 0 0;
+}
+
+.profile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-accent);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* About Me dentro del header */
+header .about-me {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
     margin: 0 auto;
 }
 
+header .about-content p {
+    color: var(--color-light);
+    line-height: 1.6;
+    font-size: 1.05rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .header {
+        display: none;
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .header-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .about-content p {
+        font-size: 0.95rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Projects Section */
+.projects {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    /* max-width: 900px; */
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.myProjects {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+}
+
 .project {
-    background: #222;
+    max-width: 350px;
+    background: var(--color-bg-medium);
     border-radius: 10px;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 1.5rem;
+    /* margin-bottom: 2rem; */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(58, 145, 136, 0.4);
+}
+
+.project h3 {
+    color: var(--color-accent);
+    margin-top: 0;
+}
+
+.project p {
+    height: 50%;
+    color: var(--color-light);
 }
 
 video {
@@ -43,9 +153,138 @@ video {
     margin-top: 0.5rem;
 }
 
+.visit-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    background: var(--color-accent);
+    color: var(--color-bg-dark);
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.visit-btn:hover {
+    background: var(--color-light);
+    transform: scale(1.05);
+}
+
+
+
+/* About Me */
+.about-me {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    text-align: center;
+    /* background-color: var(--color-bg-medium); */
+}
+
+.about-me h2 {
+    color: var(--color-accent);
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-accent);
+}
+
+/* Technologies */
+.technologies {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.technologies h2 {
+    color: var(--color-accent);
+}
+
+.tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.tech-grid img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s, filter 0.3s;
+    filter: grayscale(30%);
+}
+
+.tech-grid img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+/* Floating Socials */
+.floating-socials {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 1000;
+}
+
+.floating-socials a img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 5px rgba(58, 145, 136, 0.4);
+}
+
+.floating-socials a img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px var(--color-accent);
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 2rem 0;
-    background: #1a1a1a;
-    color: #888;
+    background: var(--color-bg-medium);
+    color: var(--color-light);
+    border-top: 1px solid var(--color-accent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    .floating-socials a img {
+        width: 35px;
+        height: 35px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .project {
+        padding: 1rem;
+    }
+}
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
 }
