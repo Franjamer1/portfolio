@@ -300,3 +300,27 @@ body {
     overflow-x: hidden;
     width: 100%;
 }
+
+
+/*iframe*/
+.project iframe {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16/9;
+    border: none;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    background-color: #000;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project p,
+.project h3 {
+    text-align: center;
+}
