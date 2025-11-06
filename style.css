@@ -153,6 +153,18 @@ video {
     margin-top: 0.5rem;
 }
 
+/* 🔁 Cloudinary iframe con mismos estilos que los videos locales */
+.project iframe,
+.project-video {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: none;
+}
+
+
 .visit-btn {
     display: inline-block;
     margin-top: 1rem;
