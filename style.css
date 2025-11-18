@@ -1,26 +1,50 @@
+/* ========================= */
+/*        VARIABLES          */
+/* ========================= */
 :root {
     --color-bg-dark: rgb(6, 41, 37);
-    /* Fondo principal */
     --color-bg-medium: rgb(4, 74, 66);
-    /* Secciones */
     --color-accent: rgb(58, 145, 136);
-    /* Detalles / botones */
     --color-light: rgb(184, 225, 221);
-    /* Texto claro / bordes */
+
+    /* Nuevas variables para TEXTO (modo oscuro) */
+    --color-text-main: #e9f5f3;
+    /* texto principal */
+    --color-text-secondary: #c6e4e1;
+    /* texto secundario */
 }
 
-/* * {
-    outline: 1px solid red;
-} */
+/* ========================= */
+/*        MODO CLARO         */
+/* ========================= */
+.light-mode {
+    --color-bg-dark: #ffffff;
+    --color-bg-medium: #f5f5f5;
+    --color-accent: #2e7d6a;
+    --color-light: #93d4c3;
+
+    --color-text-main: #1a1a1a;
+    /* negro suave */
+    --color-text-secondary: #333333;
+    /* gris oscuro */
+}
+
+
+/* ========================= */
+/*        ESTILOS BASE       */
+/* ========================= */
 
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: var(--color-bg-dark);
-    color: var(--color-light);
+    color: var(--color-text-main);
 }
 
-/* Header */
+/* ========================= */
+/*          HEADER           */
+/* ========================= */
+
 header {
     display: flex;
     flex-direction: column;
@@ -33,7 +57,6 @@ header {
     text-align: center;
 }
 
-/* Contenedor del nombre + foto */
 .header-top {
     display: flex;
     align-items: center;
@@ -45,11 +68,13 @@ header {
 .header-top h1 {
     margin: 0;
     font-size: 2.5rem;
-    color: var(--color-light);
+    color: var(--color-accent);
+    /* ⭐ Ahora SIEMPRE es verde */
 }
 
 .header-top p {
-    color: var(--color-accent);
+    color: var(--color-text-secondary);
+    /* rol "Backend Developer" */
     font-weight: 500;
     margin: 0.3rem 0 0 0;
 }
@@ -63,28 +88,27 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
-/* About Me dentro del header */
+/* ABOUT ME en el header */
 header .about-me {
-    /* width: 100%; */
     max-width: 700px;
     text-align: center;
     margin: 0 auto;
 }
 
 header .about-content p {
-    color: var(--color-light);
+    color: var(--color-text-main);
     line-height: 1.6;
     font-size: 1.05rem;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-/* Responsive */
-@media (max-width: 800px) {
-    .header {
-        display: none;
-    }
 
+/* ========================= */
+/*         RESPONSIVE        */
+/* ========================= */
+
+@media (max-width: 800px) {
     .profile-photo {
         width: 100px;
         height: 100px;
@@ -92,7 +116,6 @@ header .about-content p {
 
     .header-top {
         flex-direction: column;
-        text-align: center;
     }
 
     header .about-content p {
@@ -101,24 +124,24 @@ header .about-content p {
     }
 }
 
-/* Projects Section */
+
+/* ========================= */
+/*        PROJECTS           */
+/* ========================= */
+
 .projects {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     gap: 2rem;
     padding: 2rem;
-    /* max-width: 900px; */
     margin: 0 auto;
     align-items: center;
-    justify-content: center;
 }
 
 .myProjects {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    /* align-items: center; */
     justify-content: center;
 }
 
@@ -127,9 +150,11 @@ header .about-content p {
     background: var(--color-bg-medium);
     border-radius: 10px;
     padding: 1.5rem;
-    /* margin-bottom: 2rem; */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .project:hover {
@@ -140,31 +165,26 @@ header .about-content p {
 .project h3 {
     color: var(--color-accent);
     margin-top: 0;
+    text-align: center;
 }
 
 .project p {
+    color: var(--color-text-secondary);
+    text-align: center;
     height: 50%;
-    color: var(--color-light);
 }
 
-video {
-    width: 100%;
-    border-radius: 8px;
-    /* margin-top: 0.5rem; */
-}
-
-/* 🔁 Cloudinary iframe con mismos estilos que los videos locales */
+video,
 .project iframe,
 .project-video {
     width: 100%;
     border-radius: 8px;
-    margin-top: 0.5rem;
     aspect-ratio: 16 / 9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border: none;
 }
 
-
+/* Botón visitar */
 .visit-btn {
     display: inline-block;
     margin-top: 1rem;
@@ -183,14 +203,15 @@ video {
 }
 
 
+/* ========================= */
+/*         ABOUT ME          */
+/* ========================= */
 
-/* About Me */
 .about-me {
     max-width: 900px;
     margin: 3rem auto;
     padding: 0 1rem;
     text-align: center;
-    /* background-color: var(--color-bg-medium); */
 }
 
 .about-me h2 {
@@ -204,15 +225,11 @@ video {
     gap: 1.5rem;
 }
 
-.profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--color-accent);
-}
 
-/* Technologies */
+/* ========================= */
+/*        TECHNOLOGIES       */
+/* ========================= */
+
 .technologies {
     max-width: 900px;
     margin: 3rem auto;
@@ -245,7 +262,11 @@ video {
     filter: brightness(1.2);
 }
 
-/* Floating Socials */
+
+/* ========================= */
+/*    ICONOS FLOTANTES       */
+/* ========================= */
+
 .floating-socials {
     position: fixed;
     bottom: 20px;
@@ -270,30 +291,44 @@ video {
     box-shadow: 0 0 15px var(--color-accent);
 }
 
-/* Footer */
+
+/* ========================= */
+/*          FOOTER           */
+/* ========================= */
+
 footer {
     text-align: center;
     padding: 2rem 0;
     background: var(--color-bg-medium);
-    color: var(--color-light);
+    color: var(--color-text-main);
     border-top: 1px solid var(--color-accent);
 }
 
-/* Responsive adjustments */
-@media (max-width: 800px) {
-    .floating-socials a img {
-        width: 35px;
-        height: 35px;
-    }
 
-    h1 {
-        font-size: 2rem;
-    }
+/* ========================= */
+/*     BOTÓN DE TEMA         */
+/* ========================= */
 
-    .project {
-        padding: 1rem;
-    }
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--color-accent);
+    color: var(--color-bg-dark);
+    padding: 10px 16px;
+    border: none;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    transition: background 0.3s, color 0.3s;
 }
+
+
+/* ========================= */
+/*  PREVENIR SCROLL HORIZONTAL */
+/* ========================= */
 
 html,
 body {
@@ -302,35 +337,78 @@ body {
 }
 
 
-/*iframe*/
-.project iframe {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 16/9;
-    border: none;
-    border-radius: 8px;
-    display: block;
-    margin: 0 auto;
-    background-color: #000;
-}
-
-.project {
+/*NEW BUTTON*/
+/* === Toggle Switch === */
+.theme-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 55px;
+    height: 20px;
+    background-color: var(--color-accent);
+    border-radius: 999px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    cursor: pointer;
+    padding: 3px;
+    transition: background-color 0.4s;
+    z-index: 9999;
 }
 
-.project p,
-.project h3 {
-    text-align: center;
+/* Fondo en modo claro */
+.light-mode .theme-switch {
+    background-color: #e0e0e0;
 }
 
-/* Ajustar tamaño del placeholder al mismo tamaño que los videos */
-.project video[poster],
-.project video {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    /* Recorta si hace falta para mantener proporción */
-    border-radius: 8px;
+.switch-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--color-bg-dark);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: translateX(0);
+    transition: transform 0.4s, background 0.4s;
+}
+
+/* Modo claro mueve la bolita */
+.light-mode .switch-circle {
+    transform: translateX(35px);
+    background-color: #ffffff;
+}
+
+/* Íconos */
+.switch-circle ion-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Sol visible en modo claro */
+.sun {
+    color: var(--color-light);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Luna oculta inicialmente */
+.moon {
+    color: var(--color-text-main);
+    transform: translateY(-120%);
+    opacity: 0;
+}
+
+/* Cuando está en modo claro — sol abajo y luna aparece */
+.light-mode .sun {
+    transform: translateY(120%);
+    opacity: 0;
+}
+
+.light-mode .moon {
+    transform: translateY(0);
+    opacity: 1;
 }

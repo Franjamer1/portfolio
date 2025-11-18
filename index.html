@@ -10,6 +10,18 @@
 </head>
 
 <body>
+    <div class="theme-switch">
+        <div class="switch-circle">
+            <ion-icon class="sun" name="sunny"></ion-icon>
+            <ion-icon class="moon" name="moon"></ion-icon>
+        </div>
+    </div>
+
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
     <header>
         <div class="header-top">
             <img src="src/profilePhoto.jpg" alt="Profile Photo" class="profile-photo">
@@ -159,10 +171,28 @@
     </main>
 
     <footer>
-        <p>© 2025 Fran Patiño</p>
+        <p>© 2025 Francisco Patiño</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        const switcher = document.querySelector(".theme-switch");
+
+        // Cargar preferencia guardada
+        if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light-mode");
+        }
+
+        switcher.addEventListener("click", () => {
+            document.documentElement.classList.toggle("light-mode");
+
+            if (document.documentElement.classList.contains("light-mode")) {
+                localStorage.setItem("theme", "light");
+            } else {
+                localStorage.setItem("theme", "dark");
+            }
+        });
+    </script>
+
 
 </body>
 
