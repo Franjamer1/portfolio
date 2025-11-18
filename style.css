@@ -324,3 +324,13 @@ body {
 .project h3 {
     text-align: center;
 }
+
+/* Ajustar tamaño del placeholder al mismo tamaño que los videos */
+.project video[poster],
+.project video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    /* Recorta si hace falta para mantener proporción */
+    border-radius: 8px;
+}
