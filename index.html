@@ -168,32 +168,24 @@
             </a>
 
         </div>
+
+        <section class="daily-logs">
+            <h2>Daily Coding Progress</h2>
+            <div class="news-container" id="daily-container"></div>
+        </section>
     </main>
 
     <footer>
         <p>© 2025 Francisco Patiño</p>
     </footer>
 
-    <script>
-        const switcher = document.querySelector(".theme-switch");
 
-        // Cargar preferencia guardada
-        if (localStorage.getItem("theme") === "light") {
-            document.documentElement.classList.add("light-mode");
-        }
+    <!-- ===== MODAL ===== -->
+    <div id="image-modal" class="modal">
+        <img id="modal-img" class="modal-content">
+    </div>
 
-        switcher.addEventListener("click", () => {
-            document.documentElement.classList.toggle("light-mode");
-
-            if (document.documentElement.classList.contains("light-mode")) {
-                localStorage.setItem("theme", "light");
-            } else {
-                localStorage.setItem("theme", "dark");
-            }
-        });
-    </script>
-
-
+    <script src="script.js"></script>
 </body>
 
 </html>

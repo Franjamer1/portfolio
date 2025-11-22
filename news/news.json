@@ -1,0 +1,44 @@
+{
+    "posts": [
+        {
+            "day": 1,
+            "date": "2025-11-11",
+            "title": "Variables, User Input & Math Operations",
+            "description": "Started my daily programming practice focusing on basic logic, user input handling, and small utility functions.",
+            "image": "news/img/day1.png",
+            "repo": "https://github.com/Franjamer1/functional-programming"
+        },
+        {
+            "day": 2,
+            "date": "2025-11-11",
+            "title": "JavaScript logic and user-interaction exercises",
+            "description": "Worked on interactive JS exercises using prompts, loops, validations, and arithmetic operations to strengthen core logic and problem-solving skills.",
+            "image": "news/img/day2.png",
+            "repo": "https://github.com/Franjamer1/functional-programming"
+        },
+        {
+            "day": 3,
+            "date": "2025-11-11",
+            "title": "Conditional Structures",
+            "description": "JavaScript exercises practicing conditional logic: character validation, day classification, even/odd check, and string length validation.",
+            "image": "news/img/day3.png",
+            "repo": "https://github.com/Franjamer1/functional-programming"
+        },
+        {
+            "day": 4,
+            "date": "2025-11-11",
+            "title": "Extra Conditional Exercises",
+            "description": "Additional JavaScript exercises using conditional logic: palindrome check, cinema discount, string concatenation, score validation, letter checks, grade evaluation, monthly discount, parity check, and car-rental fee calculation.",
+            "image": "news/img/day4.png",
+            "repo": "https://github.com/Franjamer1/functional-programming"
+        },
+        {
+            "day": 5,
+            "date": "2025-11-11",
+            "title": "Nested Conditionals & Logic Exercises",
+            "description": "JavaScript practice focused on switch cases, arithmetic operations, nested conditionals, user-input flows, and multi-criteria evaluation.",
+            "image": "news/img/day5.png",
+            "repo": "https://github.com/Franjamer1/functional-programming"
+        }
+    ]
+}
